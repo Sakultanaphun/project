@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Portfolio - อโนชา สกุลธนพันธ์</title>
+    <style>
+        /* Your CSS styles here */
+  /* Reset CSS */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'prompt', sans-serif;
+    background-color: #ecf0f1;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+nav {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #e74c3c;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 20px 0;
+}
+
+#social-media-icons {
+    margin-top: 20px;
+}
+
+.social-link {
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-link:hover {
+    color: #e74c3c;
+}
+
+/* Add more styles as needed */
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+/* Additional styles for video section */ #videos { display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 20px; } iframe { margin: 10px; }
+       
+    </style>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((reg) => console.log('Service Worker registered with scope:', reg.scope))
+                .catch((error) => console.error('Service Worker registration failed:', error));
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1 style="font-size: 2em;">อโนชา สกุลธนพันธ์ - Portfolio</h1>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <a href="#facebook">Facebook</a>
+        <a href="#youtube">YouTube</a>
+        <a href="#tiktok">TikTok</a>
+    </nav>
+
+    <!-- Facebook Section -->
+    <section id="facebook">
+        <h2>Facebook Profiles</h2>
+        <ul>
+            <li><a href="https://www.facebook.com/anocha.skultanaphun" target="_blank">Anocha Sakultanaphun</a></li>
+            <li><a href="https://www.facebook.com/skpplayland" target="_blank">SKP Playland</a></li>
+            <li><a href="https://www.facebook.com/Fahascoach" target="_blank">Fahas Coach</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100065169224824" target="_blank">Profile</a></li>
+        </ul>
+    </section>
+
+    <!-- YouTube Section -->
+    <section id="youtube"> <h2>YouTube Videos</h2> <div id="videos"></div> </section> 
+
+
+    <!-- TikTok Section -->
+    <section id="tiktok">
+        <h2>TikTok</h2>
+        <ul>
+            <li><a href="https://www.tiktok.com/@anocha_sakultanaphun107" target="_blank">TikTok 1</a></li>
+            <li><a href="https://www.tiktok.com/@anocha_sakultanaphun108" target="_blank">TikTok 2</a></li>
+            <li><a href="https://www.tiktok.com/@anocha_sakultanaphun104" target="_blank">TikTok 3</a></li>
+            <!-- Add more TikTok links as needed -->
+        </ul>
+    </section>
+
+    <!-- Your existing HTML content here -->
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 อโนชา สกุลธนพันธ์ - Portfolio</p>
+    </footer>
+
+
+    <!-- Manifest file -->
+    <script>
+        const manifest = {
+            name: "Portfolio - อโนชา สกุลธนพันธ์",
+            short_name: "Portfolio",
+            description: "Anocha Sakultanaphun's portfolio",
+            start_url: "/",
+            display: "standalone",
+            background_color: "#000000",
+            theme_color: "#000000",
+            icons: [
+                {
+                    src: "/icon.png",
+                    sizes: "192x192",
+                    type: "image/png"
+                }
+                // Add more icon sizes if needed
+            ]
+        };
+
+        const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+        const manifestUrl = URL.createObjectURL(manifestBlob);
+        const manifestLink = document.createElement('link');
+        manifestLink.rel = 'manifest';
+        manifestLink.href = manifestUrl;
+        document.head.appendChild(manifestLink);
+    </script>
+<script> // ลิงก์ไปยังวิดีโอ const videoLinks = [ "https://youtu.be/vqKyb_smvww?si=XhRJeCal8tOQpdOU", "https://youtu.be/0c-gwgRSBxk?si=3E7NA6JCb0la4kCt", "https://youtu.be/5CLpKJ41ECo?si=ZJSMJS252RlX6rOX", // เพิ่มลิงก์เพิ่มเติมตามต้องการ ]; // ฟังก์ชันสำหรับโหลดวิดีโอ function loadVideos() { const videosContainer = document.getElementById("videos"); videoLinks.forEach(link => { // แสดงลิงก์วิดีโอเป็น iframe const videoIframe = document.createElement("iframe"); videoIframe.width = "560"; videoIframe.height = "315"; videoIframe.src = link; videoIframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"; videoIframe.allowfullscreen = true; videosContainer.appendChild(videoIframe); }); } // เรียกใช้ฟังก์ชันโหลดวิดีโอ loadVideos(); </script>
+<script> const videoLinks = [ "https://youtu.be/vqKyb_smvww?si=XhRJeCal8tOQpdOU", "https://youtu.be/0c-gwgRSBxk?si=3E7NA6JCb0la4kCt", "https://youtu.be/5CLpKJ41ECo?si=ZJSMJS252RlX6rOX", // Add more video links as needed ]; function loadVideos() { const videosContainer = document.getElementById("videos"); videoLinks.forEach(link => { const videoIframe = document.createElement("iframe"); videoIframe.width = "560"; videoIframe.height = "315"; videoIframe.src = link; videoIframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"; videoIframe.allowfullscreen = true; videosContainer.appendChild(videoIframe); }); } loadVideos(); </script>
+</body>
+
+</html>
